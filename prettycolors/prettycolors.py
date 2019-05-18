@@ -26,8 +26,8 @@ def generate_color(color_num, saturation=0.9, value=0.9):
     create a nice looking color
     color_num: color in sequence to generate
     '''
-    hue = (color_num * GOLDEN_ANGLE) % 360
-    hue = hue_stretch(hue)
+    hue = (color_num * GOLDEN_ANGLE) % 360.
+    hue = hue_stretch(hue) / 360.
     return lrgb2srgb([[np.array(colorsys.hsv_to_rgb(hue, saturation, value))]])
 
 
